@@ -2,7 +2,7 @@
 import sys
 import requests
 
-API_KEY = "7a6407884a31b8b056e65e4544401709"
+API_KEY = "{API_KEY}"
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 if len(sys.argv) !=2:
