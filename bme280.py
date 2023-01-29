@@ -1,3 +1,4 @@
+# simple script to use the BME280 sensor on a RaspberryPi to measure temperature, pressure and humidity 
 import smbus2
 import bme280
 
