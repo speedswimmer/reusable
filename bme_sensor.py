@@ -1,4 +1,7 @@
-# simple script to use the BME280 sensor on a RaspberryPi to measure temperature, pressure and humidity 
+# simple script to use the BME280 sensor on a RaspberryPi to measure temperature, pressure and humidity
+# RPi.bme280 library needs to be installed  (sudo pip install RPi.bme280)
+# sudo apt-get install i2c-tools
+# check that i2c kernel driver is enabled: $desg | grep i2c or $ lsmod | grep i2c
 import smbus2
 import bme280
 
@@ -14,8 +17,8 @@ try:
         bme280.load_calibration_params(bus, SENSOR_ADDRESS)
     # read data from the sensor
         data = bme280.sample(bus, SENSOR_ADDRESS)
-    # print the data using f-strings
-        
+    # print data using f-strings
+        print(data.timestamp)
         print(f'Temperature: {data.temperature:0.1f}°C')
         print(f'Pressure: {data.pressure:0.1f} hPa')
         print(f'Humidity: {data.humidity:0.1f} %')
